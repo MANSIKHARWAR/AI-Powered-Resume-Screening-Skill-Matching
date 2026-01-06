@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Screening System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-content">
+    <h1>AI Resume Screening System</h1>
+    <p>
+      Intelligent resume analysis and job matching powered by
+      <span>Artificial Intelligence & NLP</span>
+    </p>
+  </div>
+</header>
+
+
+<main>
+
+<!-- Resume Upload Card -->
+<section class="card upload-card">
+  <h2>📄 Resume Upload</h2>
+  <p class="card-subtitle">
+    Upload your resume in PDF format. The system will automatically extract the text for analysis.
+  </p>
+
+<label class="file-upload">
+  <input type="file" id="resumeFile" accept="application/pdf" onchange="showSelectedFile()">
+  <span id="fileLabel">📁 Choose PDF File</span>
+</label>
+
+<p id="fileName" class="file-name"></p>
+
+
+  <button class="primary-btn" onclick="uploadResume()">
+    🚀 Upload & Extract Resume
+  </button>
+</section>
+
+<!-- Extracted Resume Text -->
+<section class="card">
+  <h2>📝 Extracted Resume Content</h2>
+  <p class="card-subtitle">
+    Review and edit the extracted resume text before comparing it with a job description.
+  </p>
+
+  <textarea
+    id="resumeText"
+    placeholder="Your extracted resume text will appear here..."
+  ></textarea>
+</section>
+
+
+  <!-- Job Description -->
+  <section class="card">
+    <h2>💼 Job Description</h2>
+    <textarea id="jobDesc" placeholder="Paste job description here..."></textarea>
+    <button class="primary" onclick="compareResume()">Compare Resume</button>
+  </section>
+
+  <!-- Result -->
+  <section class="card result-card">
+    <h2>📊 Match Result</h2>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p id="resultText">Waiting for comparison...</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Resume Screening System | Built by You 💙</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
